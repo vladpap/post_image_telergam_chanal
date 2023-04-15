@@ -7,4 +7,5 @@ load_dotenv()
 bot = telegram.Bot(token=os.environ['TOKEN_BOT'])
 
 chat_id='@SpaceX_NASA_photo'
-bot.send_message(chat_id=chat_id, text="Hi Vladimir in chanal!!!")
+#bot.send_message(chat_id=chat_id, text="Hi Vladimir in chanal!!!")
+bot.send_photo(chat_id=chat_id, photo=open('images/nasa_epic.png', 'rb'))
