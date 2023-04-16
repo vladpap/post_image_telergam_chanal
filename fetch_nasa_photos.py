@@ -23,3 +23,12 @@ def get_nasa_random_photos(counts=40):
         filename = "images/nasa_apod_{}".format(count)
         save_images_url.save_images_from_url(link, filename)
         count += 1
+
+
+def main():
+    get_nasa_random_photos(30)
+
+
+if __name__ == "__main__":
+    main()
+    

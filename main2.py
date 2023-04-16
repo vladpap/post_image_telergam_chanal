@@ -5,27 +5,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-def extension_url_file(url):
-    return os.path.splitext(url)[-1]
 
 
-def save_images_from_url(url, path_name, params=None,):
-    response = requests.get(url, params=params)
-    response.raise_for_status()
-        
-    with open("".join([os.path.splitext(path_name)[0], extension_url_file(url)]), 'wb') as file:
-        file.write(response.content)
-
-
-def fetch_spacex_last_launch():
-    id_last_launch = "5eb87d0dffd86e000604b35b"
-    # TODO Найти последний id с фотографиями
-    
-    url_last_launch = f"https://api.spacexdata.com/v5/launches/{id_last_launch}"
-    response = requests.get(url_last_launch)
-    response.raise_for_status()
-    links_photo = response.json()["links"]["flickr"]["original"]
-    return links_photo
 
 
 def fetch_nasa_random_photos(counts=40):
@@ -59,15 +40,10 @@ def fetch_epic_photo():
     return images_url
 
 
-Path("images").mkdir(parents=True, exist_ok=True)
+
 load_dotenv()
 #token = os.getenv("NASA_API_KEY")
-links_spacex_photo = fetch_spacex_last_launch()
-count = 0
-for link in links_spacex_photo:
-    filename = "images/spacex_{}".format(count)
-    save_images_from_url(link, filename)
-    count += 1
+
 
 links_nasa_photo = fetch_nasa_random_photos()
 count = 0
