@@ -3,11 +3,7 @@ import requests
 from pathlib import Path
 
 
-def extension_url_file(url):
-    return os.path.splitext(url)[-1]
-
-
-def save_images_from_url(url, path_name, params=None):
+def save_image_from_url(url, path_name, params=None):
     Path("images").mkdir(parents=True, exist_ok=True)
 
     response = requests.get(url, params=params)

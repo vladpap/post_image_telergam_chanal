@@ -1,11 +1,11 @@
 # Скрипт отправки фото в телеграм канал
-Отправляет фото или директорию через заданное время
-Вспомогательные скрипты закачки фотографий NASA 
+Отправляет фото или директорию через заданное время.
+Вспомогательные скрипты закачки фотографий NASA .
 
 
 ## Установка
 
-Python3 должен быть уже установлен
+Python3 должен быть уже установлен.
 Используйте `pip` (или `pip3`, если есть конфликт с Python2) для установки зависимостей
 ```
 pip install -r requirements.txt
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 * в переменную окружения `CHAT_ID` записать ID или имя телеграм канала ключ NASA
 * в переменную окружения `TIME_OF_POST` записать время (в секундах) между постами
 
-Все фотографии храняться в директории `images/`
+Все фотографии храняться в директории `images/`.
 
 Рекомендуется использовать среду окружения [venv](https://docs.python.org/3/library/venv.html) для изоляции проекта.
 
@@ -27,7 +27,7 @@ $ python fetch_spacex_images.py
 
 $ python fetch_spacex_images.py [id_launch]
 ```
-Скачивает последние фотографии запуска ракет компании Илона Маска или по заданному id
+Скачивает последние фотографии запуска ракет компании Илона Маска или по заданному id.
 
 
 ### Скрипт fetch_nasa_photos
@@ -36,21 +36,21 @@ $ python fetch_nasa_photos.py
 
 $ python fetch_nasa_photos.py [count_images]
 ```
-Скачивает 30 фотографии из [Astronomy Picture of the Day](https://api.nasa.gov/) или по заданное количество
+Скачивает 30 фотографии из [Astronomy Picture of the Day](https://api.nasa.gov/) или заданное количество.
 
 
 ### Скрипт fetch_epic_photo
 ```console
 $ python fetch_epic_photo.py
 ```
-Скачивает случайную фотографию земли [Earth Polychromatic Imaging Camera](https://api.nasa.gov/) запуска ракет компании Илона Маска или по заданному id
+Скачивает случайную фотографию земли [Earth Polychromatic Imaging Camera](https://api.nasa.gov/) запуска ракет компании Илона Маска или по заданному id.
 
 
 ### Скрипт fetch_images
 ```console
 $ python fetch_images.py
 ```
-Запускает 3 скрипта (fetch_spacex_images, fetch_nasa_photos, fetch_epic_photo)
+Запускает 3 скрипта (fetch_spacex_images, fetch_nasa_photos, fetch_epic_photo).
 
 
 ### Скрипт send_photo_telegram

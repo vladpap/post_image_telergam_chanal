@@ -2,4 +2,8 @@
 .venv
 images
 __pycache__
-main2.py
+venv/
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
