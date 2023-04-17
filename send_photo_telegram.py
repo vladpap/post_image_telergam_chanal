@@ -11,9 +11,8 @@ def send_photo_channel(token, chat_id, time_of_post, path_image):
     time_of_post = time_of_post
 
     if path_image:
-        with open(path_image, 'rb') as read_photo:
-            bot.send_photo(chat_id=chat_id, photo=read_photo)
-        read_photo.closed
+        with open(path_image, 'rb') as photo_read:
+            bot.send_photo(chat_id=chat_id, photo=photo_read)
         return
 
     while True:
@@ -22,9 +21,8 @@ def send_photo_channel(token, chat_id, time_of_post, path_image):
 
         while images_files:
             post_image = choice(images_files)
-            with open('images/{}'.format(post_image), 'rb') as read_image:
-                bot.send_photo(chat_id=chat_id, photo=read_image)
-            read_image.closed
+            with open('images/{}'.format(post_image), 'rb') as image_read:
+                bot.send_photo(chat_id=chat_id, photo=image_read)
             image_post_files.append(post_image)
             images_files.remove(post_image)
             sleep(time_of_post)
@@ -34,15 +32,15 @@ def main():
     load_dotenv()
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
-        'path_image',
+        'image_path',
         nargs='?',
         help="send photo in telegram chanal (default: send photo fron images/)")
-    path_image = arg_parser.parse_args().path_image
+    image_path = arg_parser.parse_args().image_path
     send_photo_channel(
         os.environ['TOKEN_BOT_TELEGRAM'],
         os.environ["CHAT_ID_TELEGRAM"],
         int(os.environ['TIME_OF_POST']),
-        path_image)
+        image_path)
 
 
 if __name__ == "__main__":

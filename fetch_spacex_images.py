@@ -17,12 +17,12 @@ def get_spacex_last_launch(launch_id="5eb87d0dffd86e000604b35b"):
 def main():
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
-        'id_launch',
+        'launch_id',
         nargs='?',
         default="5eb87d0dffd86e000604b35b",
         help="upload photos from id launch (default: upload last launch)")
-    id_launch = arg_parser.parse_args().id_launch
-    get_spacex_last_launch(id_launch)
+    launch_id = arg_parser.parse_args().launch_id
+    get_spacex_last_launch(launch_id)
 
 
 if __name__ == "__main__":
